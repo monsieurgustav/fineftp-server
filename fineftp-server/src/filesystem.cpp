@@ -196,7 +196,7 @@ namespace Filesystem
     localtime_r(&file_status_.st_ctime, &file_timeinfo);
 #elif defined(_MSC_VER)
     localtime_s(&now_timeinfo,  &now_time_t);
-    localtime_s(&file_timeinfo, &file_status_.st_ctime);
+    localtime_s(&file_timeinfo, &file_status_.st_mtime);
 #else
     static std::mutex mtx;
     {
